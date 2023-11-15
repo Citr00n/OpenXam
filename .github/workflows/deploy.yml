@@ -16,4 +16,4 @@ jobs:
           path: openxam
         
       - name: Move
-        run: cp -ru ./openxam/. ${{ secrets.PROJECT_PATH }}
+        run: cp -rvu ./openxam/. ${{ secrets.PROJECT_PATH }}
