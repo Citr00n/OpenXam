@@ -1,0 +1,20 @@
+name: Deployment CD
+
+on: 
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    environment: Test Server
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+        with:
+          path: openxam
+        
+      - name: Move
+        run: cp ./openxam/. ${{ secrets.P_PATH }}
+            
